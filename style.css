@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main {
+    width: 100dvw;
+    height: 50dvh;
+    background-color: #585858;
+    position: relative;
+    overflow-x: hidden;
+}
+
+#control {
+    width: 100dvw;
+    height: 50dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #787878;
+    gap: 5dvmin;
+    position: relative;
+}
+
+.skill {
+    width: 15dvw;
+    height: 10dvh;
+    background-color: #a0a0a0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.skill-show {
+    width: 20dvw;
+    height: 20dvh;
+    border-radius: 10px;
+    display: block;
+    position: absolute;
+    left: 10%;
+    transition: all 0.3s ease-in-out;
+}
+
+#activeLine {
+    width: 1dvw;
+    height: 100%;
+    background-color: #ff0000;
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    left: calc(10dvw + 10% - 0.5dvw);
+    color: rgb(255, 0, 0);
+    animation: neon-pulse-red 2.8s ease-in-out infinite;
+}
+
+@keyframes neon-pulse-red {
+    0% {
+        box-shadow:
+            0 0 4px rgba(255, 0, 0, 0.4),
+            0 0 8px rgba(255, 0, 0, 0.4),
+            0 0 16px rgba(255, 0, 0, 0.4);
+    }
+
+    50% {
+        box-shadow:
+            0 0 8px rgba(255, 40, 40, 1),
+            0 0 16px rgba(255, 40, 40, 1),
+            0 0 32px rgba(255, 40, 40, 1);
+    }
+
+    100% {
+        box-shadow:
+            0 0 4px rgba(255, 0, 0, 0.4),
+            0 0 8px rgba(255, 0, 0, 0.4),
+            0 0 16px rgba(255, 0, 0, 0.4);
+    }
+}
+
+#settingButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5dvmin;
+    height: 5dvmin;
+    background-color: #a0a0a0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3dvmin;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10000;
+
+}
+
+.settingTab {
+    position: absolute;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 10px;
+    z-index: 9999;
+}
+
+.settingTab.main {
+    background-color: #c0c0c0;
+    width: 75dvmin;
+    height: 75dvmin;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 1dvmin;
+}
+
+.settingTab.keypad {
+    background-color: #c0c0c0;
+    width: 50dvmin;
+    height: 80dvmin;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 1dvmin;
+}
+
+.settingKids {
+    background-color: #ababab;
+    flex-grow: 0;
+    text-align: center;
+    align-content: center;
+    height: 5dvmin;
+    font-size: 2.5dvmin;
+    cursor: pointer;
+}
+.center {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.settingTab.keypad table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.settingTab.keypad table th,
+.settingTab.keypad table td {
+    padding: 0.5dvmin 1dvmin;
+    /* border: 1px solid #888; */
+}
+
+.settingTab.keypad table th:first-child,
+.settingTab.keypad table td:first-child {
+    text-align: left;
+    width: 80%;
+}
+
+.settingTab.keypad table th:last-child,
+.settingTab.keypad table td:last-child {
+    text-align: right;
+    width: 20%;
+}
+.settingTab.keypad table td:last-child {
+    text-align: center;
+    align-content: center;
+}
+.setingKeyControl{
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    padding: 0.5dvmin 1dvmin;
+    font-size: 2dvmin;
+    user-select: none;
+    cursor: pointer;
+}
+.settingKeyChoose{
+    background-color: #ffeb3b;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    font-size: 5dvmin;
+    align-content: center;
+    text-align: center;
+    opacity: 0.5;
+    background-color: rgba(255, 235, 59, 0.5);
+    color: rgba(0, 0, 0, 1);
+    cursor: crosshair;
+    user-select: none;
+}
